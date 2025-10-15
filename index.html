@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Al Falaj Perfumes | Mohammed Huzaifa</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <main class="card">
+    <!-- Banner + Avatar -->
+    <div class="banner-section">
+    <img src="images/logo.png" alt="Al Falaj Perfumes Logo" class="banner" />
+    <img src="images/profile.jpg" alt="Mohammed Huzaifa" class="avatar" />
+  </div>
+
+  <!-- Profile Info -->
+  <section class="profile">
+    <h1>Mohammed Huzaifa</h1>
+    <h2>Marketing | Al Falaj Perfumes</h2>
+    <p class="desc">Crafting luxury fragrances with elegance & style ✨</p>
+  </section>
+
+  <!-- Buttons -->
+  <section class="buttons">
+  <a href="tel:+971552957607" class="btn">📞 Call</a>
+  <a href="https://wa.me/971552957607" class="btn whatsapp">💬 WhatsApp</a>
+  <a href="mailto:ujju8088@gmail.com" class="btn email">✉️ Email</a>
+  <a href="https://alfalajperfumes.com" class="btn website">🌐 Website</a>
+  <a href="huzaifa.vcf" download class="btn save">💾 Save Contact</a>
+  <a href="https://www.instagram.com/yourusername" target="_blank" class="btn instagram">📸 Instagram</a>
+</section>
+
+
+    <section class="gallery">
+  <h3>Featured Perfumes</h3>
+  <div class="slider">
+    <div class="slides">
+      <div class="slide"><img src="images/perfume1.jpg" alt="Perfume 1"></div>
+      <div class="slide"><img src="images/perfume2.jpg" alt="Perfume 2"></div>
+      <div class="slide"><img src="images/perfume3.jpg" alt="Perfume 3"></div>
+    </div>
+    <button class="nav prev">❮</button>
+    <button class="nav next">❯</button>
+  </div>
+</section>
+
+
+    <section class="map">
+      <h3>Our Factory Location</h3>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.5738522775546!2d55.635739199999996!3d25.3185179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef5f3b4b4bcb897%3A0xf2de0a0a875ea96d!2sAl%20Falaj%20Perfumes%20Industry%20LLC!5e0!3m2!1sen!2sae!4v1760185193523!5m2!1sen!2sae"
+        width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </section>
+
+    <section class="share">
+      <h3>Share Your Contact</h3>
+      <p>We’ll get in touch with you soon 💌</p>
+      <form id="shareForm">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="text" id="contact" placeholder="Phone" required />
+        <input type="text" id="contact" placeholder="Email" />
+        <button type="submit" class="btn share">📤 Send</button>
+      </form>
+      <p id="responseMsg"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Al Falaj Perfumes — All Rights Reserved</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
