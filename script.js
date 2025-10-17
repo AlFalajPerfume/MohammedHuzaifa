@@ -1,14 +1,44 @@
-// Share form message
-document.getElementById("shareForm").addEventListener("submit", e => {
+// -------------------
+// Form Submission (Formspree) with custom message
+// -------------------
+document.getElementById("shareForm").addEventListener("submit", async e => {
   e.preventDefault();
+
+  const form = e.target;
   const name = document.getElementById("name").value;
   const contact = document.getElementById("contact").value;
-  document.getElementById("responseMsg").innerText =
-    `Thanks ${name}! We'll reach out to ${contact} soon 💌`;
-  e.target.reset();
+  const responseMsg = document.getElementById("responseMsg");
+
+  // Prepare FormData to send to Formspree
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      responseMsg.textContent = `✅ Thanks ${name}! We'll reach out to ${contact} soon 💌`;
+      responseMsg.style.color = "#bbf7d0";
+      form.reset();
+    } else {
+      responseMsg.textContent = "❌ Oops! Something went wrong. Please try again.";
+      responseMsg.style.color = "#f87171";
+    }
+  } catch (error) {
+    responseMsg.textContent = "❌ Error! Please check your internet connection.";
+    responseMsg.style.color = "#f87171";
+  }
 });
 
-// Auto slider
+
+// -------------------
+// Auto Slider
+// -------------------
 let index = 0;
 const slides = document.querySelector(".slides");
 const total = document.querySelectorAll(".slide").length;
