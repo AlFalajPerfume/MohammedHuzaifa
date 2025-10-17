@@ -75,22 +75,35 @@
     <p>© 2025 Al Falaj Perfumes — All Rights Reserved</p>
   </footer>
 
+  <!-- 🎞 Image Slider Script -->
   <script>
-    // Simple Image Slider
     const slides = document.querySelector('.slides');
     const slideElements = document.querySelectorAll('.slide');
     const totalSlides = slideElements.length;
     let index = 0;
 
+    // Function to show slide
+    function showSlide(i) {
+      slides.style.transform = `translateX(-${i * 100}%)`;
+    }
+
+    // Next / Prev buttons
     document.querySelector('.next').addEventListener('click', () => {
       index = (index + 1) % totalSlides;
-      slides.style.transform = `translateX(-${index * 100}%)`;
+      showSlide(index);
     });
 
     document.querySelector('.prev').addEventListener('click', () => {
       index = (index - 1 + totalSlides) % totalSlides;
-      slides.style.transform = `translateX(-${index * 100}%)`;
+      showSlide(index);
     });
+
+    // Auto-slide every 3 seconds
+    setInterval(() => {
+      index = (index + 1) % totalSlides;
+      showSlide(index);
+    }, 3000);
   </script>
+
 </body>
 </html>
