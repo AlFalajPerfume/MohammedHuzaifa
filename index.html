@@ -19,7 +19,7 @@
     <!-- Profile Info -->
     <section class="profile">
       <h1>Mohammed Huzaifa</h1>
-      <h2>Operations & Production Director | Al Falaj Perfumes</h2>
+      <h2>Marketing | Al Falaj Perfumes</h2>
       <p class="desc">Crafting luxury fragrances with elegance & style ✨</p>
     </section>
 
@@ -33,7 +33,7 @@
       <a href="https://www.instagram.com/alfalaj_perfumes/" target="_blank" class="btn instagram">📸 Instagram</a>
     </section>
 
-    <!-- Product Gallery -->
+    <!-- Gallery -->
     <section class="gallery">
       <h3>Featured Perfumes</h3>
       <div class="slider">
@@ -47,7 +47,7 @@
       </div>
     </section>
 
-    <!-- Google Map -->
+    <!-- Map -->
     <section class="map">
       <h3>Our Factory Location</h3>
       <iframe 
@@ -56,18 +56,19 @@
       </iframe>
     </section>
 
-    <!-- Contact Form -->
+    <!-- Contact Form (connected to Formspree) -->
     <section class="share">
       <h3>Share Your Contact</h3>
       <p>We’ll get in touch with you soon 💌</p>
-
+      
       <form action="https://formspree.io/f/mgvndywy" method="POST">
         <input type="text" name="name" placeholder="Your Name" required />
-        <input type="tel" name="mobile" placeholder="Mobile Number" required />
-        <textarea name="message" placeholder="Message"></textarea>
-        <input type="hidden" name="_next" value="https://alfalajperfumes.github.io/thank-you.html">
+        <input type="text" name="mobile" placeholder="Phone" required />
+        <input type="message" name="message" placeholder="Message" />
         <button type="submit" class="btn share">📤 Send</button>
       </form>
+
+      <p id="responseMsg"></p>
     </section>
   </main>
 
@@ -75,35 +76,6 @@
     <p>© 2025 Al Falaj Perfumes — All Rights Reserved</p>
   </footer>
 
-  <!-- 🎞 Image Slider Script -->
-  <script>
-    const slides = document.querySelector('.slides');
-    const slideElements = document.querySelectorAll('.slide');
-    const totalSlides = slideElements.length;
-    let index = 0;
-
-    // Function to show slide
-    function showSlide(i) {
-      slides.style.transform = `translateX(-${i * 100}%)`;
-    }
-
-    // Next / Prev buttons
-    document.querySelector('.next').addEventListener('click', () => {
-      index = (index + 1) % totalSlides;
-      showSlide(index);
-    });
-
-    document.querySelector('.prev').addEventListener('click', () => {
-      index = (index - 1 + totalSlides) % totalSlides;
-      showSlide(index);
-    });
-
-    // Auto-slide every 3 seconds
-    setInterval(() => {
-      index = (index + 1) % totalSlides;
-      showSlide(index);
-    }, 3000);
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
