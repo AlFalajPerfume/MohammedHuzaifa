@@ -12,42 +12,42 @@
   <main class="card">
     <!-- Banner + Avatar -->
     <div class="banner-section">
-    <img src="images/logo.png" alt="Al Falaj Perfumes Logo" class="banner" />
-    <img src="images/profile.jpg" alt="Mohammed Huzaifa" class="avatar" />
-  </div>
-
-  <!-- Profile Info -->
-  <section class="profile">
-    <h1>Mohammed Huzaifa</h1>
-    <h2>Operations & Production Director | Al Falaj Perfumes</h2>
-    <p class="desc">Crafting luxury fragrances with elegance & style ✨</p>
-  </section>
-
-  <!-- Buttons -->
-  <section class="buttons">
-  <a href="tel:+971552957607" class="btn">📞 Call</a>
-  <a href="https://wa.me/971552957607" class="btn whatsapp">💬 WhatsApp</a>
-  <a href="mailto:ujju8088@gmail.com" class="btn email">✉️ Email</a>
-  <a href="https://alfalajperfumes.com" class="btn website">🌐 Website</a>
-  <a href="huzaifa.vcf" download class="btn save">💾 Save Contact</a>
-  <a href="https://www.instagram.com/alfalaj_perfumes/" target="_blank" class="btn instagram">📸 Instagram</a>
-</section>
-
-
-    <section class="gallery">
-  <h3>Featured Perfumes</h3>
-  <div class="slider">
-    <div class="slides">
-      <div class="slide"><img src="images/perfume1.jpg" alt="Perfume 1"></div>
-      <div class="slide"><img src="images/perfume2.jpg" alt="Perfume 2"></div>
-      <div class="slide"><img src="images/perfume3.jpg" alt="Perfume 3"></div>
+      <img src="images/logo.png" alt="Al Falaj Perfumes Logo" class="banner" />
+      <img src="images/profile.jpg" alt="Mohammed Huzaifa" class="avatar" />
     </div>
-    <button class="nav prev">❮</button>
-    <button class="nav next">❯</button>
-  </div>
-</section>
 
+    <!-- Profile Info -->
+    <section class="profile">
+      <h1>Mohammed Huzaifa</h1>
+      <h2>Operations & Production Director | Al Falaj Perfumes</h2>
+      <p class="desc">Crafting luxury fragrances with elegance & style ✨</p>
+    </section>
 
+    <!-- Buttons -->
+    <section class="buttons">
+      <a href="tel:+971552957607" class="btn">📞 Call</a>
+      <a href="https://wa.me/971552957607" class="btn whatsapp">💬 WhatsApp</a>
+      <a href="mailto:ujju8088@gmail.com" class="btn email">✉️ Email</a>
+      <a href="https://alfalajperfumes.com" class="btn website">🌐 Website</a>
+      <a href="huzaifa.vcf" download class="btn save">💾 Save Contact</a>
+      <a href="https://www.instagram.com/alfalaj_perfumes/" target="_blank" class="btn instagram">📸 Instagram</a>
+    </section>
+
+    <!-- Product Gallery -->
+    <section class="gallery">
+      <h3>Featured Perfumes</h3>
+      <div class="slider">
+        <div class="slides">
+          <div class="slide"><img src="images/perfume1.jpg" alt="Perfume 1"></div>
+          <div class="slide"><img src="images/perfume2.jpg" alt="Perfume 2"></div>
+          <div class="slide"><img src="images/perfume3.jpg" alt="Perfume 3"></div>
+        </div>
+        <button class="nav prev">❮</button>
+        <button class="nav next">❯</button>
+      </div>
+    </section>
+
+    <!-- Google Map -->
     <section class="map">
       <h3>Our Factory Location</h3>
       <iframe 
@@ -56,16 +56,18 @@
       </iframe>
     </section>
 
+    <!-- Contact Form -->
     <section class="share">
       <h3>Share Your Contact</h3>
       <p>We’ll get in touch with you soon 💌</p>
-      <form id="shareForm">
-        <input type="text" id="name" placeholder="Your Name" required />
-        <input type="text" id="contact" placeholder="Phone" required />
-        <input type="text" id="contact" placeholder="Message" />
+
+      <form action="https://formspree.io/f/mgvndywy" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="tel" name="mobile" placeholder="Mobile Number" required />
+        <textarea name="message" placeholder="Message"></textarea>
+        <input type="hidden" name="_next" value="https://alfalajperfumes.github.io/thank-you.html">
         <button type="submit" class="btn share">📤 Send</button>
       </form>
-      <p id="responseMsg"></p>
     </section>
   </main>
 
@@ -73,7 +75,22 @@
     <p>© 2025 Al Falaj Perfumes — All Rights Reserved</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Simple Image Slider
+    const slides = document.querySelector('.slides');
+    const slideElements = document.querySelectorAll('.slide');
+    const totalSlides = slideElements.length;
+    let index = 0;
+
+    document.querySelector('.next').addEventListener('click', () => {
+      index = (index + 1) % totalSlides;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+      index = (index - 1 + totalSlides) % totalSlides;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    });
+  </script>
 </body>
 </html>
-
